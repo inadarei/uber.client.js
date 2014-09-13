@@ -70,9 +70,9 @@ Inpsired by http://api.jquery.com/jQuery/[jQuery()]
       - +id+ matches by ID
       - +name+ matches by name
       - +rel+ matches by any of the rels. 
-  +      
-  [NOTE]
-  A special case of `{"*" : "*"}` stands for: "match any elements"
++     
+[NOTE]
+A special case of `{"*" : "*"}` stands for: "match any elements"
 +
 .Example
 [source,javascript]
@@ -84,24 +84,27 @@ var locationdata = data.query({"rel" : "loc+*"}).query({"name" : "eiffel"});
       - 'children'
       - 'recursive'
     
-### Class: LinkRelation
+=== Class: LinkRelation
 
-#### Properties
+==== Properties
 
 1. name
 
-#### Methods
+==== Methods
 
 1. isURL() - is link relation name a proper URL?
 2. resolve() - resolve the link relation, if it is a proper URL
 
-### Class: Parser
+=== Class: Parser
 
-#### Methods
+==== Methods
 
-1. Constructors(message) 
-2. detect() - detects the source serialization format of a message: JSON, XML or invalid (for now)
-2. transcode(message, inputFormat = null) - transcodes any supported input format (for now: XML) to UBER/JSON
-3. parse(message, inputFormat = null) - parses any supported input format (XML or JSON, for now) into UBER Message object graph. Parsing is always lazy: only first level of the hierarchy is parsed.
+  Constructors(message)::
+  detect()::
+  detects the source serialization format of a message: JSON, XML or invalid (for now)
+  transcode(message, inputFormat = null)::
+  transcodes any supported input format (for now: XML) to UBER/JSON
+  parse(message, inputFormat = null)::
+  parses any supported input format (XML or JSON, for now) into UBER Message object graph. Parsing is always lazy: only first level of the hierarchy is parsed.
 
 
