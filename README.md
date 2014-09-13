@@ -25,7 +25,20 @@ Javascript/Node.js Client for UBER Hypermedia
 
 #### Methods
 
-1. rel() - returns an array of LinkRelation objects
+1. filter(options) - return list of child Data objects, possibly filtered by `options`:
+    1. `options` - a configuration parameter that can filter by `rels`, `name` or `id`. Returns a virual (created) Data object that contains the array of matched Data objects. 
+        
+        If you indicate multiple options, they are joined with an `OR` relationship: e.g. you will gave all elements that have certain name but also all elements that have certain id. If you need an `AND` relationship, you should join filter() calls.
+        
+        The `rels` option is an array and a match happens if any of the indicated values are present (`OR` relationship). If `AND` relationship-filtering is required, filter() calls must be chained. For example:
+        
+        ```javascript
+        var fooOrbarData  = data.children({"rels" : ["foo", "bar"]});
+        var foobarData    = data.children({"rels" : ["foo"]}).filter({"rels" : ["bar"]});
+        var calledFooOrHavingIdBar = data.children({"name" : "foo", "id" : "bar"}); // This is a 'union'
+        ```
+1. rels() - returns an array of LinkRelation objects
+2. relName - returns 
 2. follow() - follows the `url` property, if present and if a resolvable URL, and retrieves an UBER document on the other end. Returns an Uber object.
 
 ### Class: LinkRelation
