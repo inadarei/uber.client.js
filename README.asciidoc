@@ -41,6 +41,21 @@ request('http://api.froyo.io', function (error, message) {
 
 ==== Methods
 
+uberclient(url, callback [,action])::
+  constructor.
+  
+  url;;
+    a properly-formatter URL string
+    
+  callback(error, message);;
+    callback function which accepts error and message parameters
+  
+  action;; 
+    Is one of the actions defined by http://uberhypermedia[UBER spec]. Defaults to 'read' which would correspond to GET for HTTP.
+  
+send()::
+  make a request
+  
 authProvider(providerFunction)::
   sets the authorization provider that will be used henceforth. Provider function accepts +options+ javascript object used 
   for configuring specific type of a provider. UberClient pre-defines two types of providers (HTTP OAuth2-compatible, 
