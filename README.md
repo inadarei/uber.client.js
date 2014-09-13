@@ -25,7 +25,7 @@ Javascript/Node.js Client for UBER Hypermedia
 
 #### Methods
 
-1. children() - returns an array of first-level decendants of the Data object in question.
+1. children() - returns an array of first-level descendants of the Data object in question.
 1. filter(options) - return a virtual (created) Data object enclosed over a sub-set of 1st decendants of the original Data object, filtered by `options`:
     1. `options` - a configuration parameter that can filter by `rels`, `name` or `id`. 
         
