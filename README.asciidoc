@@ -72,10 +72,14 @@ Inpsired by http://api.jquery.com/jQuery/[jQuery()]
       - +rel+ matches by any of the rels. 
 +      
 [NOTE]
-==============================================================
 A special case of `{"*" : "*"}` stands for: "match any elements"
++
+.Example
+[source javascript]
 ==============================================================
-      
+var locationdata = data.query({"rel" : "loc+*"});
+==============================================================
+
     +context+;;
       can have one of two values:
       - 'children'
