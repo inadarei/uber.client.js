@@ -22,12 +22,6 @@ Node.js client is an implementation of an SDK-level client for the [UBER hyperme
 == Design Goals
 Minimal, robust, extensible
 
-.Code sample
-[source,json]
-----
-{"name" : "irakli", "lastname" : "nadareishvili"}
-----
-
 == API Documentation
 
 === Class: Message
@@ -44,7 +38,14 @@ Minimal, robust, extensible
 +error()+::
   returns an array of `Data` elements
 +raw()+::
-  returns the raw original text of the message (XML or JSON). Response object is of the form: `{"format" : "json", "message" : "..." }`
+  returns the raw original text of the message (XML or JSON). Response object is of the form: 
+  
+      .Code Sample
+      [source,json]
+      ----
+      {"format" : "json", "message" : "..." }
+      ----
+  
 +rawJSON()+::
   returns the JSON serialization of the original message. This is late binding (does parsing at every call) to optimize memory by compromising processing speed.
 
