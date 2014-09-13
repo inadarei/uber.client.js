@@ -51,7 +51,7 @@ returns the format of the original text of the message ('xml' or 'json')
 +toJSON()+::
 serializes the current message object into UBER JSON representation
 
-+toXML()+::
+toXML()::
 serializes the current message object into UBER XML representation
 
 === Class: Data
@@ -60,10 +60,10 @@ serializes the current message object into UBER XML representation
 
 ==== Methods
 
-+query(selector [, context])+::
-    selector;;
+query(selector [, context])::
+    +selector+;;
       A string containing a selector expression
-    context;;
+    +context+;;
       TBD
     
 ### Class: LinkRelation
