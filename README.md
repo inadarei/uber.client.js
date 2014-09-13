@@ -25,8 +25,9 @@ Javascript/Node.js Client for UBER Hypermedia
 
 #### Methods
 
-1. filter(options) - return list of child Data objects, possibly filtered by `options`:
-    1. `options` - a configuration parameter that can filter by `rels`, `name` or `id`. Returns a virual (created) Data object that contains the array of matched Data objects. 
+1. children() - returns an array of first-level decendants of the Data object in question.
+1. filter(options) - return a virtual (created) Data object enclosed over a sub-set of 1st decendants of the original Data object, filtered by `options`:
+    1. `options` - a configuration parameter that can filter by `rels`, `name` or `id`. 
         
         If you indicate multiple options, they are joined with an `OR` relationship: e.g. you will gave all elements that have certain name but also all elements that have certain id. If you need an `AND` relationship, you should join filter() calls.
         
@@ -59,4 +60,4 @@ Javascript/Node.js Client for UBER Hypermedia
 1. Constructors(message) 
 2. detect() - detects the source serialization format of a message: JSON, XML or invalid (for now)
 2. transcode(message, inputFormat = null) - transcodes any supported input format (for now: XML) to UBER/JSON
-3. parse(message, inputFormat = null) - parses any supported input format (XML or JSON, for now) into UBER Message object graph
+3. parse(message, inputFormat = null) - parses any supported input format (XML or JSON, for now) into UBER Message object graph. Parsing is always lazy: only first level of the hierarchy is parsed.
