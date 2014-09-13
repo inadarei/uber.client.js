@@ -70,14 +70,14 @@ Inpsired by http://api.jquery.com/jQuery/[jQuery()]
       - +id+ matches by ID
       - +name+ matches by name
       - +rel+ matches by any of the rels. 
-+      
-[NOTE]
-A special case of `{"*" : "*"}` stands for: "match any elements"
+  +      
+  [NOTE]
+  A special case of `{"*" : "*"}` stands for: "match any elements"
 +
 .Example
 [source,javascript]
 ----
-var locationdata = data.query({"rel" : "loc+*"});
+var locationdata = data.query({"rel" : "loc+*"}).query({"name" : "eiffel"});
 ----
     +context+;;
       can have one of two values:
