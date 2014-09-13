@@ -17,7 +17,15 @@ Last Updated::
   {docdate}
 
 == General
-Node.js client is an implementation of an SDK-level client for the [UBER hypermedia message format](http://uberhypermedia.org)
+Node.js client is an implementation of an SDK-level client for the http://uberhypermedia.org[UBER hypermedia message format]
+
+
+.Code sample
+[source,json]
+----
+{"name" : "irakli", "lastname" : "nadareishvili"}
+----
+
 
 == Design Goals
 Minimal, robust, extensible
@@ -32,6 +40,7 @@ Minimal, robust, extensible
   returns the version of the UBER format used in this message
 
 ==== Methods
+
 
 +data()+::
   returns an array of `Data` elements
