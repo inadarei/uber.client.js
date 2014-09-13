@@ -28,7 +28,7 @@ var client = require('uberclient')
   , token  = '1234567890'; // You'd normally get this from a separate OAuth2 workflow
 
 client.authProvider(new client.tokenAuthProvider('mytoken'));
-request('http://api.froyo.io', function (error, message) {
+client.request('http://api.froyo.io', function (error, message) {
   if (!error) {
     // do something with message
   }
@@ -41,8 +41,8 @@ request('http://api.froyo.io', function (error, message) {
 
 ==== Methods
 
-uberclient(url, callback [,action])::
-  constructor.
+request(url, callback [,action])::
+  make a request
   
   +url+;;
     a properly-formatted URL string
@@ -52,9 +52,6 @@ uberclient(url, callback [,action])::
   
   +action+;; 
     Is one of the actions defined by http://uberhypermedia[UBER spec]. Defaults to 'read' which would correspond to GET for HTTP.
-  
-send()::
-  make a request
   
 authProvider(providerFunction)::
   sets the authorization provider that will be used henceforth. Provider function accepts +options+ javascript object used 
