@@ -15,6 +15,8 @@ Javascript/Node.js Client for UBER Hypermedia
 
 1. data() - returns an array of `Data` elements
 2. error() - returns an array of `Data` elements
+3. raw() - returns the raw original text of the message (XML or JSON). Response object is of the form: `{"format" : "json", "message" : "..." }`
+4. rawJSON() - returns the JSON serialization of the original message. This is late binding (does parsing at every call) to optimize memory by compromising processing speed.
 
 
 ### Class: Data
@@ -22,6 +24,20 @@ Javascript/Node.js Client for UBER Hypermedia
 #### Properties
 
 #### Methods
+
+1. rel() - returns an array of LinkRelation objects
+2. follow() - returns retrieve if the data element is a resolvable URL
+
+### Class: LinkRelation
+
+#### Properties
+
+1. name
+
+#### Methods
+
+1. isURL() - is link relation name a proper URL?
+2. resolve() - resolve the link relation, if it is a proper URL
 
 ### Class: Parser
 
