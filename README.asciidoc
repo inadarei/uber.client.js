@@ -61,15 +61,15 @@ serializes the current message object into UBER XML representation
 ==== Methods
 
 query(selector [, context])::
-returns a new Data elements containing child Data elemenst found in the context Data object based on passed argument(s). 
+returns a new Data element containing child Data elemenst found in the context Data object, filtered based on passed argument(s). 
 Inpsired by http://api.jquery.com/jQuery/[jQuery()]
 
     +selector+;;
       is a JSON object, value of which is a regular expression, and key is one of the following three options:
       
-      - +id+ matches elements that have ID specifying the regular expression
-      - +name+ matches elements that have ID specifying the regular expression
-      - +rel+ matches elements that have ID specifying the regular expression
+      - +id+ matches by ID
+      - +name+ matches by name
+      - +rel+ matches by any of the rels. 
       
       a special case of: {"*" : "*"} stands for: "all".
     +context+;;
