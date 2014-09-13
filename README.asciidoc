@@ -71,7 +71,11 @@ Inpsired by http://api.jquery.com/jQuery/[jQuery()]
       - +name+ matches by name
       - +rel+ matches by any of the rels. 
       +
-      a special case of: {"*" : "*"} stands for: "all".
+      [NOTE]
+      ===============================
+      A special case of {"*" : "*"} stands for: "match any elements"
+      ===============================
+      
     +context+;;
       can have one of two values:
       - 'children'
