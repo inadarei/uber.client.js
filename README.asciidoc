@@ -19,14 +19,6 @@ Last Updated::
 == General
 Node.js client is an implementation of an SDK-level client for the http://uberhypermedia.org[UBER hypermedia message format]
 
-
-.Code sample
-[source,json]
-----
-{"name" : "irakli", "lastname" : "nadareishvili"}
-----
-
-
 == Design Goals
 Minimal, robust, extensible
 
