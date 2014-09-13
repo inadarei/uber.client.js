@@ -49,11 +49,11 @@ Minimal, robust, extensible
 +raw()+::
   returns the raw original text of the message (XML or JSON). Response object is of the form: 
   
-  .Code sample
-  [source,json]
-  ----
+.Code sample
+[source,json]
+----
   {"name" : "irakli", "lastname" : "nadareishvili"}
-  ----
+----
 
 +rawJSON()+::
   returns the JSON serialization of the original message. This is late binding (does parsing at every call) to optimize memory by compromising processing speed.
