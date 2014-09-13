@@ -131,7 +131,13 @@ var locationdata = data.query({"rel" : "loc+*"}).query({"name" : "eiffel"});
       - 'first-child'
       - 'last-child'
       - 'depth-n' where n is a number 1-10 (infinite depth is prohibited)
-    
+
+follow(callback)::
+follow a URL in the data element if the field is defined. Callback accepts `error` and `message` params.
+
+submit(callback)::
+construct a templated request if URL and Model are defined and submit data. Callback accepts `error` and `message` params.
+
 === Class: uberclient.LinkRelation
 
 ==== Properties
