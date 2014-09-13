@@ -50,15 +50,7 @@ returns the raw original text of the message (XML or JSON). Response object is o
 {
     "format": "json",
     "message": {
-        "uber": {
-            "version": "1.0",
-            "data": [
-                {
-                    "name": "code",
-                    "value": "q1w2e3"
-                }
-            ]
-        }
+        "uber": {}
     }
 }
 ----
