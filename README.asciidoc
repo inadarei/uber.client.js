@@ -33,22 +33,22 @@ Minimal, robust, extensible
 
 ==== Methods
 
-+Message(message)+::
+Message(message)::
 constructor. Initialized by a properly-formatted UBER message serialized in XML or JSON.
 
-+data()+::
+data()::
 returns an array of `Data` elements
   
-+error()+::
+error()::
 returns an array of `Data` elements
   
-+raw()+::
+raw()::
 returns the raw original text of the message (XML or JSON). Response object is of the form: 
 
-+rawFormat()+::
+rawFormat()::
 returns the format of the original text of the message ('xml' or 'json')
 
-+toJSON()+::
+toJSON()::
 serializes the current message object into UBER JSON representation
 
 toXML()::
@@ -61,6 +61,9 @@ serializes the current message object into UBER XML representation
 ==== Methods
 
 query(selector [, context])::
+returns a new Data elements containing child Data elemenst found in the context Data object based on passed argument(s). 
+Inpsired by and modeled after http://api.jquery.com/jQuery/[jQuery()]
+
     +selector+;;
       A string containing a selector expression
     +context+;;
