@@ -47,12 +47,11 @@ Minimal, robust, extensible
 +error()+::
   returns an array of `Data` elements
 +raw()+::
-  returns the raw original text of the message (XML or JSON). Response object is of the form: 
+returns the raw original text of the message (XML or JSON). Response object is of the form: 
   
-.Code sample
 [source,json]
 ----
-  {"name" : "irakli", "lastname" : "nadareishvili"}
+{"name" : "irakli", "lastname" : "nadareishvili"}
 ----
 
 +rawJSON()+::
