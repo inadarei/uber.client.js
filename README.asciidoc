@@ -1,5 +1,4 @@
-Node.js Client for UBER Hypermedia Type
-========================================
+= Node.js Client for UBER Hypermedia Type
 :toc:
 :numbered:
 
