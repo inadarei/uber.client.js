@@ -62,12 +62,20 @@ serializes the current message object into UBER XML representation
 
 query(selector [, context])::
 returns a new Data elements containing child Data elemenst found in the context Data object based on passed argument(s). 
-Inpsired by and modeled after http://api.jquery.com/jQuery/[jQuery()]
+Inpsired by http://api.jquery.com/jQuery/[jQuery()]
 
     +selector+;;
-      A string containing a selector expression
+      is a JSON object, value of which is a regular expression, and key is one of the following three options:
+      
+      - +id+ matches elements that have ID specifying the regular expression
+      - +name+ matches elements that have ID specifying the regular expression
+      - +rel+ matches elements that have ID specifying the regular expression
+      
+      a special case of: {"*" : "*"} stands for: "all".
     +context+;;
-      TBD
+      can have one of two values:
+      - 'children'
+      - 'recursive'
     
 ### Class: LinkRelation
 
