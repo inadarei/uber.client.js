@@ -73,7 +73,7 @@ Inpsired by http://api.jquery.com/jQuery/[jQuery()]
 +      
 [NOTE]
 ==============================================================
-A special case of {"*" : "*"} stands for: "match any elements"
+A special case of `{"*" : "*"}` stands for: "match any elements"
 ==============================================================
       
     +context+;;
