@@ -61,10 +61,10 @@ serializes the current message object into UBER XML representation
 ==== Methods
 
 +query(selector [, context])+::
-    selector::
-    A string containing a selector expression
-    context::
-    TBD
+    selector;;
+      A string containing a selector expression
+    context;;
+      TBD
     
 ### Class: LinkRelation
 
