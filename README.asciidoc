@@ -45,24 +45,14 @@ returns an array of `Data` elements
 +raw()+::
 returns the raw original text of the message (XML or JSON). Response object is of the form: 
 
-[source,json]
-----
-{
-    "format": "json",
-    "message": {
-        "uber": {}
-    }
-}
-----
-
-+rawJSON()+::
-  returns the JSON serialization of the original message. This is late binding (does parsing at every call) to optimize memory by compromising processing speed.
++rawFormat()+::
+returns the format of the original text of the message ('xml' or 'json')
 
 +toJSON()+::
-serializes the message object into UBER JSON representation
+serializes the current message object into UBER JSON representation
 
 +toXML()+::
-serializes the message object into UBER XML representation
+serializes the current message object into UBER XML representation
 
 ### Class: Data
 
