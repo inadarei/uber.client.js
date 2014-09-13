@@ -53,9 +53,9 @@ Javascript/Node.js Client for UBER Hypermedia
 1. isURL() - is link relation name a proper URL?
 2. resolve() - resolve the link relation, if it is a proper URL
 
-### Class: Parser
+=== Class: Parser
 
-#### Methods
+==== Methods
 
 1. Constructors(message) 
 2. detect() - detects the source serialization format of a message: JSON, XML or invalid (for now)
