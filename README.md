@@ -26,7 +26,7 @@ Javascript/Node.js Client for UBER Hypermedia
 #### Methods
 
 1. children() - returns an array of first-level descendants of the Data object in question.
-1. filter(options) - return a virtual (created) Data object enclosed over a sub-set of 1st decendants of the original Data object, filtered by `options`:
+1. filter(options) - return a virtual (created) Data object enclosed over a sub-set of 1st descendants of the original Data object, filtered by `options`:
     1. `options` - a configuration parameter that can filter by `rels`, `name` or `id`. 
         
         If you indicate multiple options, they are joined with an `OR` relationship: e.g. you will gave all elements that have certain name but also all elements that have certain id. If you need an `AND` relationship, you should join filter() calls.
