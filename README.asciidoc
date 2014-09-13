@@ -66,11 +66,11 @@ Inpsired by http://api.jquery.com/jQuery/[jQuery()]
 
     +selector+;;
       is a JSON object, value of which is a regular expression, and key is one of the following three options:
-      
+      +
       - +id+ matches by ID
       - +name+ matches by name
       - +rel+ matches by any of the rels. 
-      
+      +
       a special case of: {"*" : "*"} stands for: "all".
     +context+;;
       can have one of two values:
