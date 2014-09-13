@@ -4,24 +4,20 @@
 
 == Document Status
 Author::
-  Mike Amundsen, mca@amundsen.com
+  Irakli Nadareishvili
 Status::
   *[white red-background]#Working Draft#*
 
 ////
-  *[white blue-background]#Submitted to IANA#*
-  *[white green-background]#Approved by IANA#*
+  *[white blue-background]#Release Candidate#*
+  *[white green-background]#Released#*
 ////
 
 Last Updated::
   {docdate}
-Proposed IANA Registrations::
-  +application/vnd.amundsen-uber+xml+, +application/vnd.amundsen-uber+json+
-Supported H-Factors::
-  LO, LE, LT, LI, LN, CR, CU, CM, CL
 
 == General
-The UBER message format is a minimal read/write hypermedia type designed to support simple state transfers and ad-hoc hypermedia-based transitions. This document describes both the XML and JSON variants of the format and provides guidelines for supporting UBER messages over the HTTP protocol.
+Node.js client is an implementation of an SDK-level client for the [UBER hypermedia message format](http://uberhypermedia.org)
 
 === Design Goals
-The UBER message model has a number of design goals:
+Minimal, robust, extensible
