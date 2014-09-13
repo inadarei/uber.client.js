@@ -41,6 +41,9 @@ Minimal, robust, extensible
 
 ==== Methods
 
++Message(message)+::
+constructor. Initialized by a properly-formatted UBER message serialized in XML or JSON.
+
 +data()+::
 returns an array of `Data` elements
   
@@ -71,8 +74,11 @@ returns the raw original text of the message (XML or JSON). Response object is o
 +rawJSON()+::
   returns the JSON serialization of the original message. This is late binding (does parsing at every call) to optimize memory by compromising processing speed.
 
-+send()+::
-sends a message to a server (API)
++toJSON()+::
+serializes the message object into UBER JSON representation
+
++toXML()+::
+serializes the message object into UBER XML representation
 
 ### Class: Data
 
