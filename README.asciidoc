@@ -81,8 +81,10 @@ var locationdata = data.query({"rel" : "loc+*"}).query({"name" : "eiffel"});
 ----
     +context+;;
       can have one of two values:
-      - 'children'
-      - 'recursive'
+      - 'children' (default)
+      - 'first-child'
+      - 'last-child'
+      - 'depth-n' where n is a number 1-10 (infinite depth is prohibited)
     
 === Class: LinkRelation
 
