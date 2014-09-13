@@ -44,13 +44,13 @@ request('http://api.froyo.io', function (error, message) {
 uberclient(url, callback [,action])::
   constructor.
   
-  url;;
+  +url+;;
     a properly-formatted URL string
     
-  callback(error, message);;
+  +callback(error, message)+;;
     callback function which accepts error and message parameters
   
-  action;; 
+  +action+;; 
     Is one of the actions defined by http://uberhypermedia[UBER spec]. Defaults to 'read' which would correspond to GET for HTTP.
   
 send()::
