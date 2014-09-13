@@ -75,7 +75,7 @@ Inpsired by http://api.jquery.com/jQuery/[jQuery()]
 A special case of `{"*" : "*"}` stands for: "match any elements"
 +
 .Example
-[source javascript]
+[source,javascript]
 ==============================================================
 var locationdata = data.query({"rel" : "loc+*"});
 ==============================================================
