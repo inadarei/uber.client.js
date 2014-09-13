@@ -26,7 +26,7 @@ Javascript/Node.js Client for UBER Hypermedia
 #### Methods
 
 1. rel() - returns an array of LinkRelation objects
-2. follow() - returns retrieve if the data element is a resolvable URL
+2. follow() - follows the `url` property, if present and if a resolvable URL, and retrieves an UBER document on the other end. Returns an Uber object.
 
 ### Class: LinkRelation
 
