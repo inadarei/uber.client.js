@@ -51,7 +51,20 @@ returns the raw original text of the message (XML or JSON). Response object is o
   
 [source,json]
 ----
-{"name" : "irakli", "lastname" : "nadareishvili"}
+{
+    "format": "json",
+    "message": {
+        "uber": {
+            "version": "1.0",
+            "data": [
+                {
+                    "name": "code",
+                    "value": "q1w2e3"
+                }
+            ]
+        }
+    }
+}
 ----
 
 +rawJSON()+::
