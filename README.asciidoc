@@ -21,3 +21,9 @@ Node.js client is an implementation of an SDK-level client for the [UBER hyperme
 
 === Design Goals
 Minimal, robust, extensible
+
+.Code sample
+[source,json]
+----
+{"name" : "irakli", "lastname" : "nadareishvili"}
+----
