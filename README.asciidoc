@@ -22,7 +22,40 @@ Node.js client is an implementation of an SDK-level client for the http://uberhy
 == Design Goals
 Minimal, robust, extensible
 
+[source,javascript]
+----
+var client = require('uberclient')
+  , token  = '1234567890'; // You'd normally get this from a separate OAuth2 workflow
+
+client.authProvider(new client.tokenAuthProvider
+request('http://api.froyo.io', function (error, message) {
+  if (!error) {
+    // do something with message
+  }
+})
+----
+
 == API Documentation
+
+=== Module: uberclient
+
+==== Methods
+
+authProvider(providerFunction)::
+  sets the authorization provider that will be used henceforth. Provider function accepts +options+ javascript object used 
+  for configuring specific type of a provider. UberClient pre-defines two types of providers (HTTP OAuth2-compatible, 
+  bearer token-based and HTTP URL query-param based). Any provider function can be passed to extend this functionality. THe 
+  implementing function must expose preprocessRequest(request) function that will be called before a request is fired.
+  
+authProviderTokenBased({"token" : "...", "header-field" : "..."})
+   OAuth-2 compatible. `header-field` defaults to `Bearer` resulting in an HTTP request header field of the form: `Authorization: Bearer xxxxxxxxxxxxxx`
+  
+
+authProviderApikeyBased({"apikey" : "...", "query-field" : "..."})
+   API Key compatible. `query-field` defaults to `key` resulting in an HTTP request query field of the form: `?key=xxxx` or `&key=xxxx`
+  
+
+=== Class: Message
 
 === Class: Message
 
