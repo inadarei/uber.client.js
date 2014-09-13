@@ -55,9 +55,7 @@ authProviderApikeyBased({"apikey" : "...", "query-field" : "..."})::
    API Key compatible. `query-field` defaults to `key` resulting in an HTTP request query field of the form: `?key=xxxx` or `&key=xxxx`
   
 
-=== Class: Message
-
-=== Class: Message
+=== Class: uberclient.Message
 
 ==== Properties
 
@@ -87,7 +85,7 @@ serializes the current message object into UBER JSON representation
 toXML()::
 serializes the current message object into UBER XML representation
 
-=== Class: Data
+=== Class: uberclient.Data
 
 ==== Properties
 
@@ -119,7 +117,7 @@ var locationdata = data.query({"rel" : "loc+*"}).query({"name" : "eiffel"});
       - 'last-child'
       - 'depth-n' where n is a number 1-10 (infinite depth is prohibited)
     
-=== Class: LinkRelation
+=== Class: uberclient.LinkRelation
 
 ==== Properties
 
