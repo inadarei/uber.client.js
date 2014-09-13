@@ -47,11 +47,11 @@ authProvider(providerFunction)::
   bearer token-based and HTTP URL query-param based). Any provider function can be passed to extend this functionality. THe 
   implementing function must expose preprocessRequest(request) function that will be called before a request is fired.
   
-authProviderTokenBased({"token" : "...", "header-field" : "..."})
+authProviderTokenBased({"token" : "...", "header-field" : "..."})::
    OAuth-2 compatible. `header-field` defaults to `Bearer` resulting in an HTTP request header field of the form: `Authorization: Bearer xxxxxxxxxxxxxx`
   
 
-authProviderApikeyBased({"apikey" : "...", "query-field" : "..."})
+authProviderApikeyBased({"apikey" : "...", "query-field" : "..."})::
    API Key compatible. `query-field` defaults to `key` resulting in an HTTP request query field of the form: `?key=xxxx` or `&key=xxxx`
   
 
