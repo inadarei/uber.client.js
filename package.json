@@ -25,9 +25,10 @@
     ],
     "main": "src/uberclient.js",
     "dependencies": {
-        "request" : "~2.42.0"
+        "request": "~2.42.0",
         "qs": "~1.2.0"
-    }    "scripts": {
+    },
+    "scripts": {
         "test": "node tests/run.js"
     },
     "devDependencies": {
