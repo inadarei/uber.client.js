@@ -23,7 +23,7 @@
     "engines": [
         "node >= 0.8.0"
     ],
-    "main": "src/uberclient.js",
+    "main": "./lib/uberclient.js",
     "dependencies": {
         "request": "~2.42.0",
         "qs": "~1.2.0"
@@ -31,8 +31,19 @@
     "scripts": {
         "test": "node tests/run.js"
     },
-    "devDependencies": {
-        "mocha": "~1.21.4",
-        "sinon": "~1.10.3"
-    }
+"devDependencies": {
+  "after": "0.8.1",
+  "istanbul": "0.3.2",
+  "mocha": "~1.21.4",
+  "should": "~4.0.4"
+},
+"engines": {
+  "node": ">= 0.10.0"
+},
+"scripts": {
+  "prepublish": "npm prune",
+  "test": "mocha --require test/support/env --reporter spec --bail --check-leaks test/ test/acceptance/",
+  "test-cov": "istanbul cover node_modules/mocha/bin/_mocha -- --require test/support/env --reporter dot --check-leaks test/ test/acceptance/",
+  "test-travis": "istanbul cover node_modules/mocha/bin/_mocha --report lcovonly -- --require test/support/env --reporter spec --check-leaks test/ test/acceptance/"
+}
 }
