@@ -16,7 +16,8 @@ describe('Client', function(){
 
     client.request(options, function (error, message) {
       if (!error) {
-        console.log(message.raw());
+        // console.log(message.raw());
+        //
       } else {
         console.log(error);
       }
