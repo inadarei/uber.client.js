@@ -26,7 +26,8 @@
     "main": "./lib/uberclient.js",
     "dependencies": {
         "request": "~2.42.0",
-        "qs": "~1.2.0"
+        "qs": "~1.2.0",
+        "xml2js" : ""
     },
     "scripts": {
         "test": "node tests/run.js"
