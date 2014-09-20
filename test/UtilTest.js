@@ -40,5 +40,17 @@ describe('Util', function(){
 
     u.selectMimeType("unknown").should.equal(u.uberMediaTypeJSON);
   });
+
+  it('should be able to detect successful HTTP response codes', function() {
+    var goodCodes = [200, 201, 202, 204, 206, 300, 301, 302, 303, 304, 305, 307];
+    goodCodes.forEach(function(code, idx) {
+      u.isHttpSuccess(code).should.equal(true);
+    });
+
+    var sampleBadCodes = [400,500,100];
+    sampleBadCodes.forEach(function(code, idx) {
+      u.isHttpSuccess(code).should.equal(false);
+    });
+  });
 });
 
