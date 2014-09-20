@@ -28,12 +28,12 @@ var client = require('uberclient')
   , token  = '1234567890'; // You'd normally get this from a separate OAuth2 workflow
 
 client.authProvider(client.authProviderTokenBased({'token' : 'mytoken'}));
-client.request('http://api.froyo.io', function (error, message) {
+
+client.request('http://api.froyo.io', function (error, msg) {
   if (!error) {
-    // do something with message
-    //message.query("
+    var names = msg.query({"rel" : "urn:froyo_io:query:names"}).submit("male");
   }
-}, null, 'xml');
+}, "read", "xml");
 ----
 
 == API Documentation

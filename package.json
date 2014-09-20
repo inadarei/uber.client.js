@@ -27,7 +27,8 @@
   "dependencies": {
     "qs": "~1.2.0",
     "request": "~2.42.0",
-    "xml2js": "~0.4.4"
+    "xml2js": "~0.4.4",
+    "underscore" : "~1.7.0"
   },
   "scripts": {
     "prepublish": "npm prune",

@@ -10,7 +10,9 @@ describe('Client', function(){
     //client.authProvider(client.authProviderTokenBased({'token' : 'mytoken'}));
     client.request('http://api.froyo.io', function (error, msg) {
       if (!error) {
-        var result = msg.query({"rel" : "urn:froyo_io:query:names"});
+        var result;
+        result = msg.query({"rel" : "urn:froyo_io:query:names"});
+        result = msg.query({"rel" : /.*?query:names.*?/i});
         done();
       }
     }, "read", "xml");
