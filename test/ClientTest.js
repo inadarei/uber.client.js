@@ -1,5 +1,5 @@
 var client = require('../') //uberclient
-u      = require('../lib/util') ;
+  , u      = require('../lib/util') ;
 
 
 describe('Client', function(){
