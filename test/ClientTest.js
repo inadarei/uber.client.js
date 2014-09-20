@@ -1,16 +1,16 @@
 var client = require('../') //uberclient
+  , Message = require('../lib/message').Message
   , u      = require('../lib/util') ;
 
 
 describe('Client', function(){
 
-  it('should be able to make simple http requests', function(done) {
+  it.only('should be able to make simple http requests', function(done) {
 
     //client.authProvider(client.authProviderTokenBased({'token' : 'mytoken'}));
-    client.request('http://api.froyo.io', function (error, message) {
+    client.request('http://api.froyo.io', function (error, msg) {
       if (!error) {
-        // do something with message
-        console.log(JSON.stringify(message));
+        var result = msg.query({"rel" : "urn:froyo_io:query:names"});
         done();
       }
     }, "read", "xml");

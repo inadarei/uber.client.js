@@ -31,7 +31,7 @@ client.authProvider(client.authProviderTokenBased({'token' : 'mytoken'}));
 client.request('http://api.froyo.io', function (error, message) {
   if (!error) {
     // do something with message
-    message.query("
+    //message.query("
   }
 }, null, 'xml');
 ----
