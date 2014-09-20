@@ -25,9 +25,10 @@
   },
   "main": "./lib/uberclient.js",
   "dependencies": {
+    "chai": "^1.9.1",
     "qs": "~1.2.0",
     "request": "~2.42.0",
-    "xml2js": ""
+    "xml2js": "~0.4.4"
   },
   "scripts": {
     "prepublish": "npm prune",
@@ -39,6 +40,7 @@
     "after": "0.8.1",
     "istanbul": "0.3.2",
     "mocha": "~1.21.4",
+    "chai": "^1.9.1",
     "should": "~4.0.4"
   }
 }

@@ -1,9 +1,11 @@
-var after  = require('after')
-  , should = require('should')
-  , assert = require('assert');
+var chai = require('chai')
+  , assert = chai.assert
+  , after  = require('after')
+  , expect = chai.expect
+  , should = chai.should();
 
 var message = require('../lib/message')
-    tutil  = require('./testUtil');
+    tutil  = require('./test-helper');
 
 
 describe('Uber Message class', function() {
@@ -11,19 +13,19 @@ describe('Uber Message class', function() {
     it('should be able to properly detect XML message format', function() {
       var xml = " <uber version=\"1.0\">\n<data>blah</data>\n</uber>";
       var msg = message(xml);
-      assert.equal(msg.rawFormat(), "xml");
+      msg.rawFormat().should.equal("xml");
     });
 
     it('should be able to properly detect JSON message format', function() {
       var xml = " {\n \"uber\" : { \'version\' : \"1.0\", \"data\" : {}}}";
       var msg = message(xml);
-      assert.equal(msg.rawFormat(), "json");
+      msg.rawFormat().should.equal("json");
     });
 
     it('should be able to properly reject unknwon message format', function() {
       var xml = " ljlkjljk";
       var msg = message(xml);
-      assert.equal(msg.rawFormat(), "unknown");
+      msg.rawFormat().should.equal("unknown");
     });
   });
 
@@ -34,10 +36,14 @@ describe('Uber Message class', function() {
         var xml = data;
         var msg = message(xml);
         msg.toJSON(function(err, jsonmsg) {
-          assert.equal(jsonmsg.uber.version, "1.0", "Cleaning parser putting attribs as $'s");
-          assert.equal(jsonmsg.uber.data[2]['rel'][0], "search", "Turning rels into arrays");
-          assert.equal(jsonmsg.uber.data[3]['data'][1]['value'], "2014-05-01", "Cleaning parser putting vals as '_'");
-
+          //Cleaning parser putting attribs as $'s
+          jsonmsg.uber.version.should.equal("1.0");
+          jsonmsg.uber.data.should.have.length(5);
+          // Turning rels into arrays:
+          jsonmsg.uber.data[2]['rel'].should.have.length(2);
+          jsonmsg.uber.data[2]['rel'][0].should.equal("search");
+          // "Cleaning parser putting vals as '_'
+          jsonmsg.uber.data[3].data[1].value.should.equal("2014-05-01");
           done();
         });
 

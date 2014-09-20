@@ -1,34 +1,21 @@
-var after  = require('after')
-  , should = require('should')
-  , u = require('../lib/util')
-  , assert = require('assert');
-
 var client = require('../') //uberclient
 u      = require('../lib/util') ;
 
 
 describe('Client', function(){
 
-  it('should be possible to map an UBER action to HTTP method', function() {
-    var http_method = u.action2HttpMethod('read');
-    assert.ok(http_method, 'GET');
+  it('should be able to make simple http requests', function(done) {
 
-    var http_method = u.action2HttpMethod('remove');
-    assert.ok(http_method, 'DELETE');
-
-    var http_method = u.action2HttpMethod('replace');
-    assert.ok(http_method, 'PUT');
-
-    var http_method = u.action2HttpMethod('partial');
-    assert.ok(http_method, 'GET');
-
-    var http_method = u.action2HttpMethod('append');
-    assert.ok(http_method, 'PATCH');
-
-    // wrong one defaults to GET
-    var http_method = u.action2HttpMethod('cooking');
-    assert.ok(http_method, 'GET');
+    //client.authProvider(client.authProviderTokenBased({'token' : 'mytoken'}));
+    client.request('http://api.froyo.io', function (error, message) {
+      if (!error) {
+        // do something with message
+        console.log(JSON.stringify(message));
+        done();
+      }
+    }, "read", "xml");
 
   });
+
 });
 
