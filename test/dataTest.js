@@ -38,7 +38,7 @@ describe('Uber Data class', function() {
         done();
     });
 
-    it.only('should be able to query through Data objects', function(done) {
+    it('should be able to query through Data objects', function(done) {
       var data  = new Data(sampleJson);
       var result;
 
