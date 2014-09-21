@@ -1,4 +1,4 @@
-var fixtures = require('path').join(__dirname, 'fixtures');
+var fixtures = require('path').join(__dirname, '../fixtures');
 
 var fs = require('fs');
 

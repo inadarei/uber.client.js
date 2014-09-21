@@ -4,7 +4,7 @@ var chai = require('chai')
   , should = chai.should();
 
 var message = require('../lib/message')
-  , tutil  = require('./test-helper');
+  , tutil  = require('./support/fixture-helper');
 
 
 describe('Uber Message class', function() {
