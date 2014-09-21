@@ -11,7 +11,7 @@ describe('Uber Data class', function() {
   var sampleJson;
 
   beforeEach(function(done){
-    tutil.loadFixture('uber-document.json', function(err, json) {
+    tutil.loadFixture('uber-data.json', function(err, json) {
       if (err)  { assert.fail(err); }
 
       sampleJson = json;
