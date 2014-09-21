@@ -1,7 +1,7 @@
 = Node.js Client for UBER Hypermedia Type
 
 link:https://travis-ci.org/inadarei/uber.client.js[image:https://travis-ci.org/inadarei/uber.client.js.svg?branch=master[alt="build status]] &nbsp;
-image:https://img.shields.io/npm/v/uberclient.svg[alt="npm version"]
+link:https://www.npmjs.org/package/uberclient[image:https://img.shields.io/npm/v/uberclient.svg[alt="npm version"]]
 
 :toc:
 :numbered:
