@@ -83,6 +83,9 @@ authProviderApikeyBased({"apikey" : "...", "query-field" : "..."})::
 
 ==== Methods
 
+query(selector [, context])::
+    @See: identical method for Data.
+
 Message(message)::
 constructor. Initialized by a properly-formatted UBER message serialized in XML or JSON.
 
@@ -91,18 +94,6 @@ returns an array of `Data` elements
   
 error()::
 returns an array of `Data` elements
-  
-raw()::
-returns the raw original text of the message (XML or JSON). Response object is of the form: 
-
-rawFormat()::
-returns the format of the original text of the message ('xml' or 'json')
-
-toJSON()::
-serializes the current message object into UBER JSON representation
-
-toXML()::
-serializes the current message object into UBER XML representation
 
 === Class: uberclient.Data
 
