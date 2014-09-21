@@ -30,9 +30,11 @@ describe('Uber Data class', function() {
         done();
     });
 
-    it('should parse data structure recursively producing data objects, not: just JSON', function(done) {
-        var data  = new Data(JSON.parse(sampleJson));
-        //data.should.deep.equal(data2);
+    it.only('should parse data structure recursively producing data objects, not: just JSON', function(done) {
+        var data  = new Data(sampleJson);
+        //console.dir(data.data[0]);
+
+        //console.log(data.rel);
 
         done();
     });
