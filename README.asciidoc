@@ -1,4 +1,8 @@
 = Node.js Client for UBER Hypermedia Type
+
+link:https://travis-ci.org/inadarei/uber.client.js[image:https://travis-ci.org/inadarei/uber.client.js.svg?branch=master[alt="build status]] &nbsp;
+link:https://www.npmjs.org/package/uberclient[image:https://img.shields.io/npm/v/uberclient.svg[alt="npm version"]]
+
 :toc:
 :numbered:
 
@@ -13,8 +17,10 @@ Status::
   *[white green-background]#Released#*
 ////
 
+////
 Last Updated::
   {docdate}
+////
 
 == General
 Node.js client is an implementation of an SDK-level client for the http://uberhypermedia.org[UBER hypermedia message format]
