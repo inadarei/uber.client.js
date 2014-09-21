@@ -80,7 +80,7 @@ new(message, callback)::
   Mints a new message using a properly-formatted UBER message serialized in XML or JSON.
   Callback accepts:
   - +err+ to indicate cases when aan error may occur
-  - +uberMessage+ the fully-minted anchor:anchor-Message[Message] object
+  - +uberMessage+ the fully-minted <<anchor-Message,Message>> object
 
 [[anchor-Message]]
 === Class: Message
