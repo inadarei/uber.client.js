@@ -84,8 +84,6 @@ new(message, callback)::
 
 [[anchor-Message]]
 
-anchor:anchor-Message[]
-
 === Class: Message
 
 ==== Properties
