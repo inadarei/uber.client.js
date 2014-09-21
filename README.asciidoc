@@ -143,17 +143,3 @@ construct a templated request if URL and Model are defined and submit data. Call
 
 1. isURL() - is link relation name a proper URL?
 2. resolve() - resolve the link relation, if it is a proper URL
-
-=== Class: Parser
-
-==== Methods
-
-  Constructors(message)::
-  detect()::
-  detects the source serialization format of a message: JSON, XML or invalid (for now)
-  transcode(message, inputFormat = null)::
-  transcodes any supported input format (for now: XML) to UBER/JSON
-  parse(message, inputFormat = null)::
-  parses any supported input format (XML or JSON, for now) into UBER Message object graph. Parsing is always lazy: only first level of the hierarchy is parsed.
-
-
