@@ -73,29 +73,35 @@ authProviderTokenBased({"token" : "...", "header-field" : "..."})::
 authProviderApikeyBased({"apikey" : "...", "query-field" : "..."})::
    API Key compatible. `query-field` defaults to `key` resulting in an HTTP request query field of the form: `?key=xxxx` or `&key=xxxx`
   
+=== Module: message
+==== Methods
 
-=== Class: uberclient.Message
+new(message, callback)::
+  Mints a new message using a properly-formatted UBER message serialized in XML or JSON.
+  Callback accepts:
+  - +err+ to indicate cases when aan error may occur
+  - +uberMessage+ the fully-minted anchor:anchor-Message[Message] object
+
+[[anchor-Message]]
+=== Class: Message
 
 ==== Properties
 
 +version+::
-  returns the version of the UBER format used in this message
-
-==== Methods
+  returns the version of the UBER format used in this message. Read-only.
++rawMessage::
+  returns the raw representation of the message the object was initialized with. Read-only.
 
 query(selector [, context])::
-    @See: identical method for Data.
-
-Message(message)::
-constructor. Initialized by a properly-formatted UBER message serialized in XML or JSON.
+  @See: the identical method for the Data class.
 
 data()::
-returns an array of `Data` elements
+  returns an array of `Data` elements
   
 error()::
-returns an array of `Data` elements
+  returns an array of `Data` elements
 
-=== Class: uberclient.Data
+=== Class: Data
 
 ==== Properties
 
@@ -133,7 +139,7 @@ follow a URL in the data element if the field is defined. Callback accepts `erro
 submit(callback)::
 construct a templated request if URL and Model are defined and submit data. Callback accepts `error` and `message` params.
 
-=== Class: uberclient.LinkRelation
+=== Class: LinkRelation [TBD]
 
 ==== Properties
 
