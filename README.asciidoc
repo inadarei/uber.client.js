@@ -83,6 +83,7 @@ new(message, callback)::
   - +uberMessage+ the fully-minted <<anchor-Message,Message>> object
 
 [[anchor-Message]]
+anchor:anchor-Message[]
 === Class: Message
 
 ==== Properties
