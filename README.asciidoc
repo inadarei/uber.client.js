@@ -1,3 +1,6 @@
+
+image:https://img.shields.io/npm/v/uberclient.svg/[alt="npm version"]
+
 = Node.js Client for UBER Hypermedia Type
 :toc:
 :numbered:
