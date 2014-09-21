@@ -8,36 +8,38 @@ var Data = require('../lib/data').Data
 
 
 describe('Uber Data class', function() {
+  var sampleJson;
+
+  beforeEach(function(done){
+    tutil.loadFixture('uber-document.json', function(err, json) {
+      if (err)  { assert.fail(err); }
+
+      sampleJson = json;
+      done();
+    });
+  });
 
   describe('Constructor function', function() {
-    var sampleJson;
 
-    beforeEach(function(done){
-      tutil.loadFixture('uber-document.json', function(err, json) {
-        if (err)  { assert.fail(err); }
-
-        sampleJson = json;
-        done();
-      });
-    });
-
-    it('should not care if we pass a string json or an actual object', function(done) {
-        var data  = new Data(JSON.parse(sampleJson))
+    it('should not care if we pass a string json or an actual object', function (done) {
+      var data = new Data(JSON.parse(sampleJson))
           , data2 = new Data(sampleJson);
 
-        data.should.deep.equal(data2);
-        done();
+      data.should.deep.equal(data2);
+      done();
     });
 
-    it('should parse deep data structure recursively producing data objects, not: just JSON', function(done) {
-        var data  = new Data(sampleJson);
-        data.data[0].url.should.equal('http://example.org/');
-        data.data[3].url.should.equal('http://example.org/list/1');
-        data.data[3].data.data[1].name.should.equal('dueDate');
-        data.data[3].data.data[1].value.should.equal('2014-05-01');
-        done();
+    it('should parse deep data structure recursively producing data objects, not: just JSON', function (done) {
+      var data = new Data(sampleJson);
+      data.data[0].url.should.equal('http://example.org/');
+      data.data[3].url.should.equal('http://example.org/list/1');
+      data.data[3].data.data[1].name.should.equal('dueDate');
+      data.data[3].data.data[1].value.should.equal('2014-05-01');
+      done();
     });
+  });
 
+  describe('query function', function() {
     it('should be able to query through Data objects', function(done) {
       var data  = new Data(sampleJson);
       var result;
