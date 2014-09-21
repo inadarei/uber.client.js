@@ -82,7 +82,7 @@ new(message, callback)::
   - +err+ to indicate cases when aan error may occur
   - +uberMessage+ the fully-minted <<anchor-Message,Message>> object
 
-[[anchor-Message]]
+[anchor-Message]
 
 === Class: Message
 
