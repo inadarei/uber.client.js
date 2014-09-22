@@ -1,0 +1,10 @@
+{
+  "name": "search",
+  "id": "search",
+  "rel": [
+    "search",
+    "collection"
+  ],
+  "url": "http://example.org/search",
+  "model": "{&title}"
+}
