@@ -36,7 +36,7 @@ Minimal, robust, extensible
 var client = require('uberclient')
   , token  = '1234567890'; // You'd normally get this from a separate OAuth2 workflow
 
-client.authProvider(client.authProviderTokenBased({'token' : 'mytoken'}));
+client.authProvider(client.authProviderTokenBased({'token' : token}));
 
 client.request('http://api.froyo.io', function (error, msg) {
   if (!error) {
