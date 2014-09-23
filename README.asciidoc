@@ -30,6 +30,7 @@ Node.js client is an implementation of an SDK-level client for the http://uberhy
 == Design Goals
 Minimal, robust, extensible
 
+.Example1:
 [source,javascript]
 ----
 var client = require('uberclient')
@@ -42,7 +43,11 @@ client.request('http://api.froyo.io', function (error, msg) {
     var names = msg.query({"rel" : "urn:froyo_io:query:names"}).submit({"m" : "male"});
   }
 }, "read", "xml");
+----
 
+.Example2:
+[source,javascript]
+----
  var url = 'https://raw.githubusercontent.com/inadarei/uber.client.js/master/test/fixtures/uber-sample.json';
     client.request(url, function(error, uberMsg) {
       if (!err) {
