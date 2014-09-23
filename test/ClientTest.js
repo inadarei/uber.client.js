@@ -48,7 +48,8 @@ describe('Client', function(){
       uberMsg.data[2].data[0].id.should.equal('people');
 
       var result;
-      result = uberMsg.query({"id" : "people"}).query({"rel" : "http://example.org/rels/create"});
+      result = uberMsg.query({"id" : "people"})
+               .query({"rel" : "http://example.org/rels/create"});
       result[0].action.should.equal("append");
       done();
     });

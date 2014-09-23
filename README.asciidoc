@@ -51,7 +51,8 @@ client.request('http://api.froyo.io', function (error, msg) {
  var url = 'https://raw.githubusercontent.com/inadarei/uber.client.js/master/test/fixtures/uber-sample.json';
     client.request(url, function(error, uberMsg) {
       if (!err) {
-        var appendActionData = uberMsg.query({"id" : "people"}).query({"rel" : "http://example.org/rels/create"});
+        var appendActionData = uberMsg.query({"id" : "people"})
+                              .query({"rel" : "http://example.org/rels/create"});
       }
     });
 ----
