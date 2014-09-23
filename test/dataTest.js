@@ -52,7 +52,7 @@ describe('Uber Data class', function() {
   });
 
   describe('query function', function() {
-    it.only('should be able to query through Data objects', function(done) {
+    it('should be able to query through Data objects', function(done) {
       var data  = new Data(sampleNestedJson);
       var result;
 

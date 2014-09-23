@@ -11,6 +11,8 @@ Author::
   Irakli Nadareishvili
 Status::
   *[white red-background]#Working Draft#*
+Limitations::
+  Cannot handle documents with circular references.
 
 ////
   *[white blue-background]#Release Candidate#*
@@ -37,9 +39,16 @@ client.authProvider(client.authProviderTokenBased({'token' : 'mytoken'}));
 
 client.request('http://api.froyo.io', function (error, msg) {
   if (!error) {
-    var names = msg.query({"rel" : "urn:froyo_io:query:names"}).submit("male");
+    var names = msg.query({"rel" : "urn:froyo_io:query:names"}).submit({"m" : "male"});
   }
 }, "read", "xml");
+
+ var url = 'https://raw.githubusercontent.com/inadarei/uber.client.js/master/test/fixtures/uber-sample.json';
+    client.request(url, function(error, uberMsg) {
+      if (!err) {
+        var appendActionData = uberMsg.query({"id" : "people"}).query({"rel" : "http://example.org/rels/create"});
+      }
+    });
 ----
 
 == API Documentation
@@ -100,6 +109,13 @@ data()::
 error()::
   returns an array of `Data` elements
 
+=== Class: DataArray
+
+==== Methods
+
+query(selector [, context])::
+  @See: the identical method for the Data class.
+
 === Class: Data
 
 ==== Properties
@@ -107,18 +123,21 @@ error()::
 ==== Methods
 
 query(selector [, context])::
-returns a new Data element containing child Data elemenst found in the context Data object, filtered based on passed argument(s). 
+returns a new Data element containing child Data elements found in the context Data object, filtered based on passed argument(s).
 Inpsired by http://api.jquery.com/jQuery/[jQuery()]
 
     +selector+;;
-      is a JSON object, value of which is a regular expression, and key is one of the following three options:
+      is a JSON object, value of which is a string or a regular expression. Please note: numbers are compared as strings
+      and variable type is ignored.
+      The key is one of the following options:
       +
       - +id+ matches by ID
       - +name+ matches by name
-      - +rel+ matches by any of the rels. 
+      - +rel+ matches by any of the rels.
+      - +value+ matches by value property
 +     
 [NOTE]
-A special case of `{"*" : "*"}` stands for: "match any elements"
+A special case of `{"*" : "*"}` stands for: "match any elements" (Not yet implemented)
 +
 .Example
 [source,javascript]

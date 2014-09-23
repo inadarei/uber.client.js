@@ -9,22 +9,45 @@ var message = require('../lib/message')
 
 describe('Uber Message class', function() {
   describe('rawFormat() function', function() {
-    it('should be able to properly detect XML message format', function() {
-      var xml = " <uber version=\"1.0\">\n<data>blah</data>\n</uber>";
-      var msg = message(xml);
-      msg.rawFormat().should.equal("xml");
+    it('should be able to properly detect XML message format', function(done) {
+      var xml = " <uber version=\"1.0\">\n<data>blah</data>\n<data name=\"mildred\">foo</data></uber>";
+      message.new(xml, function(err, uberMessage) {
+        should.not.exist(err);
+        should.exist(uberMessage);
+        uberMessage.rawFormat().should.equal("xml");
+        done();
+      });
+
     });
 
-    it('should be able to properly detect JSON message format', function() {
-      var xml = " {\n \"uber\" : { \'version\' : \"1.0\", \"data\" : {}}}";
-      var msg = message(xml);
-      msg.rawFormat().should.equal("json");
+    it('should be able to properly detect JSON message format when supplied a JSON string', function(done) {
+      var json = " {\n \"uber\" : { \"version\" : \"1.0\", \"data\" : []}}";
+      message.new(json, function(err, uberMessage) {
+        should.not.exist(err);
+        should.exist(uberMessage);
+        uberMessage.rawFormat().should.equal("json");
+        done();
+      });
     });
 
-    it('should be able to properly reject unknwon message format', function() {
-      var xml = " ljlkjljk";
-      var msg = message(xml);
-      msg.rawFormat().should.equal("unknown");
+    it('should be able to properly detect JSON message format when supplied a JSON object', function(done) {
+      var json = " {\n \"uber\" : { \"version\" : \"1.0\", \"data\" : []}}";
+      json = JSON.parse(json);
+      message.new(json, function(err, uberMessage) {
+        should.not.exist(err);
+        should.exist(uberMessage);
+        uberMessage.rawFormat().should.equal("json");
+        done();
+      });
+    });
+
+    it('should be able to properly reject an unknwon message format', function(done) {
+      var garbage = " ljlkjljk";
+      message.new(garbage, function(err, uberMessage) {
+        should.exist(err);
+        should.not.exist(uberMessage);
+        done();
+      });
     });
   });
 
@@ -33,19 +56,20 @@ describe('Uber Message class', function() {
       tutil.loadFixture('uber-document.xml', function(err, data) {
         if (err)  { assert.fail(err); }
         var xml = data;
-        var msg = message(xml);
-        msg.toJSON(function(err, jsonmsg) {
+        var msg = message.new(xml, function (err, uberMessage) {
+          should.not.exist(err);
+          should.exist(uberMessage);
+
           //Cleaning parser putting attribs as $'s
-          jsonmsg.uber.version.should.equal("1.0");
-          jsonmsg.uber.data.should.have.length(5);
+          uberMessage.version.should.equal("1.0");
+          uberMessage.data.should.have.length(5);
           // Turning rels into arrays:
-          jsonmsg.uber.data[2].rel.should.have.length(2);
-          jsonmsg.uber.data[2].rel[0].should.equal("search");
+          uberMessage.data[2].rel.should.have.length(2);
+          uberMessage.data[2].rel[0].should.equal("search");
           // "Cleaning parser putting vals as '_'
-          jsonmsg.uber.data[3].data[1].value.should.equal("2014-05-01");
+          uberMessage.data[3].data[1].value.should.equal("2014-05-01");
           done();
         });
-
       });
     });
   });

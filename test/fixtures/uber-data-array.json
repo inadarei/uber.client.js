@@ -50,7 +50,13 @@
       "data": [
         {
           "name": "title",
-          "value": "Paint the fence"
+          "value": "Paint the fence",
+          "data" : [
+            {
+              "name" : "cost",
+              "value" : 20
+            }
+          ]
         },
         {
           "name": "dueDate",
