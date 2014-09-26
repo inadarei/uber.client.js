@@ -44,6 +44,7 @@
     "chai": "^1.9.1",
     "should": "~4.0.4",
     "jshint": "~2.5.x",
+    "nock" : "^0.48.0",
     "commander" : "",
     "glob" : ""
   }
