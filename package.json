@@ -28,7 +28,7 @@
     "qs": "~1.2.0",
     "request": "~2.42.0",
     "xml2js": "~0.4.4",
-    "underscore" : "~1.7.0"
+    "underscore": "~1.7.0"
   },
   "scripts": {
     "prepublish": "npm prune",
@@ -39,13 +39,15 @@
   },
   "devDependencies": {
     "after": "0.8.1",
-    "istanbul": "0.3.2",
-    "mocha": "~1.21.4",
     "chai": "^1.9.1",
-    "should": "~4.0.4",
+    "commander": "",
+    "coveralls": "^2.11.2",
+    "glob": "",
+    "istanbul": "0.3.2",
     "jshint": "~2.5.x",
-    "nock" : "^0.48.0",
-    "commander" : "",
-    "glob" : ""
+    "mocha": "~1.21.4",
+    "mocha-lcov-reporter": "0.0.1",
+    "nock": "^0.48.0",
+    "should": "~4.0.4"
   }
 }
