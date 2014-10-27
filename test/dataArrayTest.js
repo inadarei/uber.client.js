@@ -53,6 +53,44 @@ describe('Uber DataArray class', function() {
         done();
       });
     });
+
+    it('should throw an exception when malformed data is passed in', function(done) {
+      tutil.loadFixture('uber-data-array-malformed.json', function(err, json) {
+        should.not.exist(err);
+        should.exist(json);
+
+        var dataErr;
+
+        try {
+          var da = new DataArray(json);
+        } catch(e) {
+          dataErr = e;
+        }
+
+        dataErr.should.be.an.instanceOf(Error);
+        done();
+      });
+    });
+
+    it('should accept an empty message and default to an array when not provided', function(done) {
+      var da = new DataArray();
+
+      da.json.should.be.an.instanceOf(Array);
+      done();
+    });
+
+    it('should throw an exception when a non-array json object is passed in as message', function(done) {
+      var err;
+
+      try {
+        var da = new DataArray({ 'error' : 'someone set us up the bomb'});
+      } catch (e) {
+        err = e;
+      }
+
+      err.should.be.an.instanceOf(Error);
+      done();
+    });
   });
 
   describe('query function', function() {
