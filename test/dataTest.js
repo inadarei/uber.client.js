@@ -44,15 +44,9 @@ describe('Uber Data class', function() {
         should.not.exist(err);
         should.exist(json);
 
-        var dataErr;
-
-        try {
-          var data = new Data(json);
-        } catch(e) {
-          dataErr = e;
-        }
-
-        dataErr.should.be.an.instanceOf(Error);
+        (function(){
+          var data = new Data(json);          
+        }).should.throw();
         done();
       });
     });
@@ -60,13 +54,10 @@ describe('Uber Data class', function() {
     it('should throw an exception when not provided with an input', function(done) {
       var dataErr;
 
-      try {
-        var data = new Data();
-      } catch (e) {
-        dataErr = e;
-      }
-
-      dataErr.should.be.an.instanceOf(Error);
+      (function(){
+        var data = new Data();          
+      }).should.throw();
+      
       done();
     });
 
