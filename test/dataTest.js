@@ -39,6 +39,52 @@ describe('Uber Data class', function() {
       done();
     });
 
+    it('should throw an exception when malformed data is passed in', function(done) {
+      tutil.loadFixture('uber-data-array-malformed.json', function(err, json) {
+        should.not.exist(err);
+        should.exist(json);
+
+        (function(){
+          var data = new Data(json);          
+        }).should.throw();
+        done();
+      });
+    });
+
+    it('should throw an exception when not provided with an input', function(done) {
+      var dataErr;
+
+      (function(){
+        var data = new Data();          
+      }).should.throw();
+      
+      done();
+    });
+
+    it('should pass through query members of the message\'s data parameter', function(done) {
+      tutil.loadFixture('uber-data-nested-with-query.json', function(err, json) {
+        should.not.exist(err);
+        should.exist(json);
+
+        var data = new Data(json);
+        data.data.length.should.be.above(0);
+        done();
+      });
+    });
+
+    it('should throw errors for malformed data property', function(done) {
+      tutil.loadFixture('uber-data-nested-with-error.json', function(err, json) {
+        should.not.exist(err);
+        should.exist(json);
+
+        (function(){
+          var data = new Data(json);          
+        }).should.throw(/Will cause an error/);
+        done();
+
+      });
+    });
+
     it('should parse deep data structure recursively producing data objects, not: just JSON', function (done) {
       var data = new Data(sampleNestedJson);
 

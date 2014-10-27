@@ -1,0 +1,17 @@
+{
+  "data": [
+    {
+      "data" : "Will cause an error"
+    },
+    {
+      "name": "dueDate",
+      "value": "2014-05-01"
+    }
+  ],
+  "name": "todo",
+  "rel": [
+    "item",
+    "http://example.org/rels/todo"
+  ],
+  "url": "http://example.org/list/1"
+}
