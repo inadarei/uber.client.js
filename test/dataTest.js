@@ -72,23 +72,16 @@ describe('Uber Data class', function() {
       });
     });
 
-    it('should throw errors for malformed data property', function(done) {
+    it.only('should throw errors for malformed data property', function(done) {
       tutil.loadFixture('uber-data-nested-with-error.json', function(err, json) {
         should.not.exist(err);
         should.exist(json);
 
-        var dataErr;
-
-        try {
-          var data = new Data(json);
-        } catch(e) {
-          dataErr = e;
-        }
-
-        dataErr.should.be.an.instanceOf(Error);
-        dataErr.message.should.match(/Will cause an error/);
-
+        (function(){
+          var data = new Data(json);          
+        }).should.throw(/Will cause an error/);
         done();
+
       });
     });
 
