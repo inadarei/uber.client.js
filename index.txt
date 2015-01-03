@@ -1,8 +1,8 @@
 = Node.js Client for UBER Hypermedia Type
 
-link:https://travis-ci.org/inadarei/uber.client.js[image:https://travis-ci.org/inadarei/uber.client.js.svg?branch=master[alt="build status]] &nbsp;
-link:https://coveralls.io/r/inadarei/uber.client.js[image:https://coveralls.io/repos/inadarei/uber.client.js/badge.png[alt="test coverage"]] &nbsp;
-link:https://www.npmjs.org/package/uberclient[image:https://img.shields.io/npm/v/uberclient.svg[alt="npm version"]]
+image:https://travis-ci.org/inadarei/uber.client.js.svg?branch=master["build status",link="https://travis-ci.org/inadarei/uber.client.js"] &nbsp;
+image:https://coveralls.io/repos/inadarei/uber.client.js/badge.png["test coverage",link="https://coveralls.io/r/inadarei/uber.client.js"] &nbsp;
+image:https://img.shields.io/npm/v/uberclient.svg[alt="npm version",link="https://www.npmjs.org/package/uberclient"]
 
 :toc:
 :numbered:
