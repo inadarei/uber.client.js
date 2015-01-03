@@ -21,6 +21,8 @@ Status::
   *[white red-background]#Early, incomplete alpha#*
 Limitations::
   Doesn't handle documents with circular references.
+Github source of the client code::
+  https://github.com/inadarei/uber.client.js[https://github.com/inadarei/uber.client.js]  
 Github source of this documentation:: 
   https://github.com/inadarei/uber.client.js/tree/gh-pages[https://github.com/inadarei/uber.client.js/tree/gh-pages]  
 Documentation Last Updated::
