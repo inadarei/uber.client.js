@@ -6,12 +6,15 @@
 :stylesheet: uber-custom.css
 :scriptsdir: js
 
+
+== Project Status
+
 image:https://travis-ci.org/inadarei/uber.client.js.svg?branch=master["build status",link="https://travis-ci.org/inadarei/uber.client.js"] &nbsp;
 image:https://coveralls.io/repos/inadarei/uber.client.js/badge.png["test coverage",link="https://coveralls.io/r/inadarei/uber.client.js"] &nbsp;
 image:https://codeclimate.com/github/inadarei/uber.client.js/badges/gpa.svg["code climate",link="https://codeclimate.com/github/inadarei/uber.client.js"] &nbsp;
 image:https://img.shields.io/npm/v/uberclient.svg[alt="npm version",link="https://www.npmjs.org/package/uberclient"]
 
-== Document Status
+
 Author::
   Irakli Nadareishvili
 Status::
