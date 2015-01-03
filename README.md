@@ -45,4 +45,4 @@ client.request('http://api.froyo.io', function (error, msg) {
 
 ### Full Documentation
 
-You can see full documentation of the client at: [[http://jsclient.uberhypermedia.org]]
+You can see full documentation of the client at: http://jsclient.uberhypermedia.org
