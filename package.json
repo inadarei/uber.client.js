@@ -1,6 +1,6 @@
 {
   "name": "uberclient",
-  "description": "Thin client for UBER Hypermedia Type",
+  "description": "Thin client for UBER Hypermedia Format",
   "tags": [
     "http",
     "simple",
@@ -10,7 +10,7 @@
     "util",
     "utility"
   ],
-  "version": "0.2.0",
+  "version": "0.2.1",
   "author": "Irakli Nadareishvili <irakli@gmail.com>",
   "repository": {
     "type": "git",
