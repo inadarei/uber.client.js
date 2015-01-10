@@ -1,6 +1,7 @@
 uber.client.js
 ==============
 
+![MIT License](https://img.shields.io/npm/l/uberclient.svg?style=flat)
 [![Build Status](https://travis-ci.org/inadarei/uber.client.js.svg?branch=master)](https://travis-ci.org/inadarei/uber.client.js) &nbsp;
 [![Coverage Status](https://coveralls.io/repos/inadarei/uber.client.js/badge.png?branch=master)](https://coveralls.io/r/inadarei/uber.client.js?branch=master) &nbsp;
 [![Code Climate](https://codeclimate.com/github/inadarei/uber.client.js/badges/gpa.svg)](https://codeclimate.com/github/inadarei/uber.client.js) &nbsp;
